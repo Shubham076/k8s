@@ -1,0 +1,6 @@
+globalValue: "some-global-value"
+app:
+  - name: app1
+    value: value1
+  - name: app2
+    value: value2

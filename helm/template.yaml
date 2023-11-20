@@ -1,0 +1,45 @@
+{{- $root := . -}}
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: example-configmap
+data:
+  global: {{ $root.Values.globalValue }}
+  {{- range .Values.app }}
+  {{ .name }}: {{ .value }}
+  {{- end }}
+
+
+# $root holds the entire context of the values, including globalValue.
+# The range loop iterates over each element in the app array.
+# Inside the loop, . refers to the current element of app, so .name and .value are properties of the current app element.
+# Outside the loop, $root.Values.globalValue is used to access the globalValue at the top level.
+
+# data:  {another syntax}
+#   {{- range $key, $value := .Values.config }}
+#   {{ $key }}: {{ $value | quote }}
+#   {{- end }}
+
+
+# conditionals
+# data:
+#   {{- if .Values.featureEnabled }}
+#   feature: "enabled"
+#   {{- else }}
+#   feature: "disabled"
+#   {{- end }}
+
+
+# with
+# The with statement changes the scope inside the block to the object passed to it. If the object is empty, the block is not executed.
+# {{- with .Values.myConfig }}
+# apiVersion: v1
+# kind: ConfigMap
+# metadata:
+#   name: my-configmap
+# data:
+#   key1: {{ .key1 }}
+#   key2: {{ .key2 }}
+# {{- end }}
+# In this template, .Values.myConfig is scoped within the with block. If myConfig is not defined or empty, the whole ConfigMap block will not be rendered.
+
