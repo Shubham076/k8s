@@ -42,8 +42,6 @@ Edit the files in the `templates/` directory to define the Kubernetes resources 
 
 Package your chart into a chart archive file with:
 
-bashCopy code
-
 `helm package mychart` 
 
 ## Common Helm Commands
