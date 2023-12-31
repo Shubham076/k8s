@@ -40,3 +40,6 @@ spec:
     - protocol: TCP
       port: 27017
       targetPort: 27017
+
+# In the Service's spec.selector, you can identify which pods to route traffic to only by their labels.
+# On the other hand, in the Deployment's spec.selector you have two options to decide on which node the pods will be scheduled on, which are: matchExpressions, matchLabels.
