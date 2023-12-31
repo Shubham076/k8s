@@ -107,17 +107,17 @@ When you run a helm install command with Helm, it initiates the deployment of th
 
 Here's a breakdown of what happens:
 
-- Reads the Chart: Helm reads the chart (a collection of files that describe a related set of Kubernetes resources) and its values.yaml file to understand what resources need to be created or configured.
+- **Reads the Chart**: Helm reads the chart (a collection of files that describe a related set of Kubernetes resources) and its values.yaml file to understand what resources need to be created or configured.
 
-- Template Rendering: Helm processes the templates in the chart with the values provided either from the values.yaml file or from any overrides you provide at install time. This rendering step converts the Helm templates into valid Kubernetes manifest files.
+- **Template Rendering**: Helm processes the templates in the chart with the values provided either from the values.yaml file or from any overrides you provide at install time. This rendering step converts the Helm templates into valid Kubernetes manifest files.
 
-- Resource Creation: Helm then sends these generated manifest files to the Kubernetes API server, instructing it to create the resources described in these manifests.
+- **Resource Creation**: Helm then sends these generated manifest files to the Kubernetes API server, instructing it to create the resources described in these manifests.
 
-- Creating Pods and Other Resources: If the chart includes Deployments, StatefulSets, DaemonSets, etc., the Kubernetes API server processes these manifests and starts creating the resources. For example, if a Deployment is defined, the Kubernetes scheduler starts creating the required Pods.
+- **Creating Pods and Other Resources**: If the chart includes Deployments, StatefulSets, DaemonSets, etc., the Kubernetes API server processes these manifests and starts creating the resources. For example, if a Deployment is defined, the Kubernetes scheduler starts creating the required Pods.
 
-- Resource Management: Helm tracks the resources it creates as a release. This allows Helm to manage the lifecycle of these resources, including upgrading, rolling back, or deleting them.
+- **Resource Management**: Helm tracks the resources it creates as a release. This allows Helm to manage the lifecycle of these resources, including upgrading, rolling back, or deleting them.
 
-- Feedback to User: Helm provides feedback about the status of the installation, including any errors encountered during the deployment process.
+- **Feedback to User**: Helm provides feedback about the status of the installation, including any errors encountered during the deployment process.
 
 ## Conclusion
 
