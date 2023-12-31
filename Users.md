@@ -79,7 +79,7 @@ Set the context to use these credentials.
 
 ```
 kubectl config set-context [user-name] --cluster=[cluster-name] --user=[user-name]
-``` 
+```
 
 ### Step 7: Test the Configuration
 
@@ -87,6 +87,7 @@ Test to ensure the new user can access the cluster.
 
 ```
 kubectl --context [user-name] get pods
+kubectl config use-context [context-name]
 ``` 
 
 ## Conclusion
