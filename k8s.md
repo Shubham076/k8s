@@ -81,3 +81,11 @@ kubectl top pods
 ```
 kubectl delete -f nginx-deployment.yaml
 ```
+
+# Setting kubectl context
+```
+kubectl config set-cluster YOUR_CLUSTER_NAME --server=YOUR_CLUSTER_API_SERVER_URL --certificate-authority=PATH_TO_CA_CERTIFICATE
+kubectl config set-credentials YOUR_USER_NAME --client-certificate=PATH_TO_YOUR_CERTIFICATE --client-key=PATH_TO_YOUR_KEY
+kubectl config set-context YOUR_CONTEXT_NAME --cluster=YOUR_CLUSTER_NAME --user=YOUR_USER_NAME
+kubectl config use-context YOUR_CONTEXT_NAME
+```
